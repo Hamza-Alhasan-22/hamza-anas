@@ -1,0 +1,42 @@
+.video-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10.4%;
+    padding-right: 10.4%;
+    opacity: 1;background-color: rgba(252,252,252, 1);
+}
+
+.videos {
+    display: flex;
+    flex-direction: row;
+}
+
+.video-container button {
+    opacity: 1;
+    background-color: rgba(51, 51, 58, 1);
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-family: "ProximaNova-Bold";
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+    width: 11.4%;
+    margin-left: 45%;
+}
+
+@media only screen and (max-width: 700px) {
+    .videos {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .video-container button {
+        font-size: 10px;
+        width: 30%;
+        margin-left: 35%;
+    }
+}

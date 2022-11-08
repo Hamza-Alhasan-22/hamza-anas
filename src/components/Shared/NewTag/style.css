@@ -1,0 +1,27 @@
+.new-tag {
+    opacity: 1;
+    background-color: rgba(255, 96, 8, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: "ProximaNova-Regular";
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    z-index: 2;
+    position: absolute;
+    margin: 0;
+    margin-left: 3%;
+    width: 20%;
+    border: none;
+    top: 0px;
+    left: 0px;
+}
+@media only screen and (max-width: 1000px) {
+    .new-tag{
+        font-size: 8px;
+    }
+}

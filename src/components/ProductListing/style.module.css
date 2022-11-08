@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    margin-top: 40px;
+}
+.left{
+    width: 18vw;
+    margin-right: 2.083vw;
+}
+.right{
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 22% 23% 23%;
+    grid-column-gap: 3%;
+    column-gap: 3%;
+    grid-row-gap: 4%;
+    row-gap: 4%;
+}

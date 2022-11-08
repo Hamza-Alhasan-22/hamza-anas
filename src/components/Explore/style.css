@@ -1,0 +1,147 @@
+.explore-container {
+    padding: 1% 10.4% 1% 10.4%;
+    opacity: 1;
+    background-color: rgba(252, 252, 252, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.explore-left {
+    width: 48%;
+    padding-right: 1%;
+}
+
+.explore-right {
+    width: 48%;
+    padding-left: 1%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5.7%;
+    row-gap: 3.8%;
+}
+
+.explore-container button {
+    opacity: 1;
+    background-color: rgba(51, 51, 58, 1);
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    font-family: "ProximaNova-Bold";
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-top: 5%;
+    width: 15%;
+    align-self: center;
+}
+
+.news-body img {
+    width: 100%;
+}
+
+.news-body p {
+    opacity: 1;
+    color: rgba(51, 51, 58, 1);
+    font-family: "ProximaNova-Light";
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 25px;
+}
+
+.news-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.LeftArrow{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    z-index: 5;
+    top: 40%;
+    left: 0%;
+    border-radius: 0px 50px 50px 0px ;
+    background-color: black;
+    opacity: 0.5;
+
+}
+.arrowHover:hover {
+    background-color: gray;
+
+    cursor:pointer;
+}
+.RightArrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    z-index: 5;
+    top: 40%;
+    right: 0%;
+    border-radius: 50px 0 0 50px ;
+    background-color: black;
+    opacity: 0.4;
+}
+
+.arrow {
+    border: 1PX solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+
+}
+.right {
+
+    transform: rotate(-45deg);
+}
+.left {
+    transform: rotate(135deg);
+}
+.mobile-mode{
+    display: none;
+}
+
+@media only screen and (max-width: 1000px){
+    .mobile-mode{
+        display: flex;
+    }
+    .explore-body{
+        flex-direction: column;
+        position: relative;
+    }
+    .explore-left {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 2%;
+        /* transition: 1s; */
+    }
+    .explore-right {
+        width: 100%;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        /* transition: 1s; */
+    }
+    .explore-container button {
+        width: 34%;
+    }
+}

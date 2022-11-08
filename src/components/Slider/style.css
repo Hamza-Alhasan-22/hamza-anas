@@ -1,0 +1,130 @@
+.slider{
+    /* background-color: aqua; */
+    /* padding-top: 7%; */
+    /* background:no-repeat ; */
+    /* padding-top: 126px;
+    background-image: url("./slider1.png");
+    background-size: 100%;
+    background-size: cover; */
+}
+.SlidesContainer{
+    color: white;
+    /* max-width: 1440px; */
+    position: relative;
+    
+
+    display: flex;
+    justify-content: end;
+    align-content: center;
+    height: 66vh;
+    /* z-index: 2; */
+    
+}
+.MyButton{
+    color: white;
+    width: 83px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    background: none;
+    border:none;
+    border-bottom: 2px solid white;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0;
+}
+.MyButton:hover{
+    cursor: pointer;
+    /* background-color: rgb(1, 1, 1); */
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10.4%;
+}
+.MySpan{
+    color: rgba(255, 255, 255, 1);
+    font-size: 60px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 80px;
+}
+
+.LeftArrow{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    z-index: 5;
+    top: 40%;
+    left: 0%;
+    border-radius: 0px 50px 50px 0px ;
+    background-color: black;
+    opacity: 0.5;
+
+}
+.arrowHover:hover {
+    background-color: gray;
+
+    cursor:pointer;
+}
+.RightArrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    z-index: 5;
+    top: 40%;
+    border-radius: 50px 0 0 50px ;
+    background-color: black;
+    opacity: 0.4;
+}
+
+.arrow {
+    border: 1PX solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+
+}
+.right {
+
+    transform: rotate(-45deg);
+}
+.left {
+    transform: rotate(135deg);
+}
+
+@media only screen and (max-width: 470px) {
+    .content{
+        
+        /* width: 100%; */
+        /* padding-right: 0;
+        text-align: center;
+        align-items: center; */
+    }
+    .MySpan{
+        /* text-align: center; */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .MySpan{
+        font-size: 9vw;
+        text-align: left;
+        line-height: 7vh;
+    }
+    .SlidesContainer{
+        height: 45vh;
+    }
+}
