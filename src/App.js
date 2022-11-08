@@ -52,7 +52,7 @@ function App() {
       </div>
       <HeaderImg title={headerImgData.title} description={headerImgData.description} img={headerImgData.img} />
       <div className='main-container'>
-        <SortSection />
+        {/* <SortSection /> */}
         {/* <NewArrivals /> */}
         <ProductListing />
       </div>

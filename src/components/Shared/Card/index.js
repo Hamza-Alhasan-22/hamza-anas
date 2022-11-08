@@ -19,7 +19,7 @@ import PopOut from '../PopOut';
 
 
 function Card(props) {
-    const {cardData, popupData} = props;
+    const { cardData, popupData } = props;
     // const images = importAll(require.context('./components/NewArrivals/imgCards', false, /\.(png|jpe?g|svg)$/));
     // <img src={images['doggy.png']} />
     const tag = (check) => {
@@ -27,22 +27,22 @@ function Card(props) {
         check === 'True' ? x = <NewTag /> : x = <></>
         console.log(x)
         return (
-            x 
+            x
         )
     };
 
     const [isHover, setIsHover] = useState(0)
-    const Modal = (stuf) => ( 
-        <Popup 
-        trigger={isHover ? <button className='card-button'>QUICK VIEW</button>: null} modal>
+    const Modal = (stuf) => (
+        <Popup
+            trigger={isHover ? <button className='card-button'>QUICK VIEW</button> : null} modal>
             {stuf}
         </Popup>
     );
 
 
     return (
-        <div className='card' onMouseEnter={(e) => {setIsHover(true)}}
-        onMouseLeave={(e) => {setIsHover(false)}}>
+        <div className='card' onMouseEnter={(e) => { setIsHover(true) }}
+            onMouseLeave={(e) => { setIsHover(false) }}>
             <img src={cardData.image} alt={'img card ' + cardData.id} className='card-img' />
             {
                 cardData.newTag === 'active' ? tag('True') : tag('False')
