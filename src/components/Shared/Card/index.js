@@ -43,7 +43,7 @@ function Card(props) {
     return (
         <div className='card' onMouseEnter={(e) => {setIsHover(true)}}
         onMouseLeave={(e) => {setIsHover(false)}}>
-            <img src={require('./imgCards/'+cardData.image)} alt={'img ' + cardData.id} className='card-img' />
+            <img src={cardData.image} alt={'img card ' + cardData.id} className='card-img' />
             {
                 cardData.newTag === 'active' ? tag('True') : tag('False')
             }
