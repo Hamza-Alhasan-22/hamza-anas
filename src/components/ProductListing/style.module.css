@@ -46,10 +46,76 @@
 }
 
 @media only screen and (max-width: 700px) {
+    .container{
+        flex-direction: column;
+    }
     .gridContainer {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+    }
+    .right{
+        width: 79vw;
+    }
+    .left{
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* //////// */
+
+.sortSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin: 0;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.sortSection select {
+    margin-left: 1.736vw;
+    width: 11.4583vw;
+    opacity: 1;
+    color: rgba(81, 83, 86, 1);
+    font-family: "ProximaNova-Regular";
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 20px;
+    text-transform: uppercase;
+    height: 40px;
+    border: 1px solid rgba(222, 222, 222, 1);
+    background-color: rgba(255, 255, 255, 1);
+    appearance: none;
+}
+
+.sortSpan {
+    display: flex;
+    align-items: center;
+}
+
+.sortSection p {
+    opacity: 1;
+    color: rgba(51, 51, 51, 1);
+    font-family: "VLNewParisHeadline";
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    line-height: 40px;
+    margin: 0;
+}
+
+@media only screen and (max-width: 700px) {
+    .sortSection select{
+        width: 20vw;
     }
 }

@@ -45,3 +45,9 @@
     line-height: 40px;
     margin: 0;
 }
+
+@media only screen and (max-width: 700px) {
+    .sortSection select{
+        width: 20vw;
+    }
+}
