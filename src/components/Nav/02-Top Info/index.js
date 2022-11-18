@@ -14,7 +14,7 @@ function TopInfo() {
                 </p> :
                 <div className={styles.navContainer}>
                     <p>Be the first to get best offers by Matterprints</p>
-                    {/* <input>Enter your email</input> */}
+                    <input type="text" value="Enter your email"/>
                     <button>Subscribe</button>
                 </div>
             }
