@@ -1,4 +1,4 @@
-.main-container {
+.mainContainer {
     /* padding-left: 10.4%;
     padding-right: 10.4%; */
     /* padding-top: 1%; */
@@ -6,13 +6,13 @@
     margin-left: 10.4%;
 }
 
-.header-container {
+.headerContainer {
     z-index: 9;
     /* position: fixed; */
     width: 100%;
 }
 
-.footer-container {
+.footerContainer {
     opacity: 1;
     background-color: rgba(51, 51, 58, 1);
     margin-top: 2%;

@@ -17,31 +17,35 @@ export const items = [
     label: 'Apparels',
     items: [
       {
-        name: 'pants', label: 'Pants', inside: [{
-          name: "hi hamza",
-          age: "22",
-        }],
+        name: 'pants', label: 'PANTS',
       },
       {
-        name: 'jumpsuits', label: 'Jumpsuits', inside: [{
-          name: "hi Anas"
-        }]
+        name: 'jumpsuits', label: 'JUMPSUTIS',
       },
       {
-        name: 'shorts', label: 'Shorts', inside: [{
-          name: "hi hamza"
-        }]
+        name: 'shorts', label: 'SHORTS',
       },
       {
-        name: 'tops', label: 'Tops', inside: [{
-          name: "hi hamza"
-        }]
+        name: 'tops', label: 'TOPS',
       },
     ],
   },
   {
     name: 'accessories',
     label: 'Accessories',
+    items: [
+      {
+        name: 'pants', label: 'Pants',
+      },
+      {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      },
+
+    ]
     /*items: [
       { name: 'profile', label: 'Profile' },
       { name: 'insurance', label: 'Insurance' },
@@ -67,29 +71,67 @@ export const items = [
     name: 'houseware',
     label: 'Houseware',
     items: [
-    ],
+      {
+        name: 'pants', label: 'Pants',
+      },
+      {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      },
+
+    ]
   },
   {
     name: 'others',
     label: 'Others',
     items: [
-    ],
+      {
+        name: 'pants', label: 'Pants',
+      },
+      {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      },
+
+    ]
   },
   {
     name: 'techniques',
     label: 'Techniques',
     items: [
-    ],
+      {
+        name: 'pants', label: 'Pants',
+      },
+      {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      }, {
+        name: 'pants', label: 'Pants',
+      },
+
+    ]
   },
   {
     name: 'styles',
     label: 'Styles',
     items: [
-      { name: 'pants', label: 'Pants' },
-      { name: 'jumpsuits', label: 'Jumpsuits' },
-      { name: 'shorts', label: 'Shorts' },
-      { name: 'tops', label: 'Tops' },
-    ],
+      {
+        name: 'bold', label: 'BOLD',
+      },
+      {
+        name: 'monochrome', label: 'MONOCHROME',
+      }, {
+        name: 'neutrals', label: 'NEUTRALS',
+      },
+
+    ]
   },
 ]
 export const options = [
