@@ -1,19 +1,13 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
 import { NavBar } from '../../../pages/homePage.js'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 function FavCard(props) {
-    const {cards, closeState, Bags, Favs} = useContext(NavBar);
-    //const [numOfBags, setNumOfBags] = Bags;
-    //const [numOfFavs, setNumOfFavs] = Favs;
+    const { cards, closeState, favList } = useContext(NavBar);
     const [cardsArry, setCardsArry] = cards;
-    //const [close, setClose] = closeState;
-    // const id = props.id;
-    // const title = props.title;
-    // const price = props.price;
-    // const image = props.image;
-    // const quantity = props.quantity;
-    const [quantity, setQuantity] = useState(cardsArry.map(i => 1));
+    const [close, setClose] = closeState;
+    const [quantity, setQuantity] = useState(cardsArry.map(i => i.quantity));
     const handleQuantity = (check, ind) => {
         let ary = [...quantity];
         check == '+' ? ary[ind] = ary[ind] + 1 :
@@ -21,63 +15,67 @@ function FavCard(props) {
                 ary[ind] = ary[ind] - 1;
         setQuantity(ary);
     };
-    const totalPrice = () =>{
+    useEffect(() => {
+        let arry = [...cardsArry];
+        arry.map((item,index)=>item.quantity=quantity[index]);
+        setCardsArry(arry);
+      }, [quantity]);
+    const totalPrice = () => {
         let sum = 0;
-        cardsArry.map((item,index)=>{
-            return(
-                sum = sum + (item.price*quantity[index])
+        cardsArry.map((item, index) => {
+            return (
+                sum = sum + (item.price * quantity[index])
             )
         })
         return sum;
     }
+    const deleteItem = (indexForRemoval) => {
+        let ary2 = [...cardsArry];
+        ary2.splice(indexForRemoval, 1);
+        setCardsArry(ary2);
+    }
     return (
         <div className={styles.container}>
             <h1 className={styles.mainTitle}>Your Cart ({cardsArry.length} items)</h1>
-            <div className={styles.columns}>
-                <div className={styles.column}>
-                    <p>Item</p>
-                    {
-                        cardsArry.map(i=>{
-                            return(
-                                <span className={styles.item}>
-                                    <img src={i.image[0]} alt='cart img' />
-                                    <h2>{i.title}</h2>
-                                </span>
-                            )
-                        })
-                    }
-                </div>
-                <div className={styles.column}>
-                    <p>Price</p>
-                    {
-                        cardsArry.map(i => <p>${i.price}</p>)
-                    }
-                </div>
-                <div className={styles.column}>
-                    <p>Quantity</p>
-                    {
-                        cardsArry.map((item, index) => {
-                            return (
-                                <span className={styles.adjustSpan}>
-                                    <button className={styles.adjustButton} onClick={() => { handleQuantity('-',index) }}>-</button>
-                                    <button className={styles.qButton}>{quantity[index]}</button>
-                                    <button className={styles.adjustButton} onClick={() => { handleQuantity('+',index) }}>+</button>
-                                </span>
-                            )
-                        })
-                    }
-                </div>
-                <div className={styles.column}>
-                    <p>Total</p>
-                    {
-                        cardsArry.map((item,index)=>{
-                            return(
-                                <p>${(item.price*quantity[index]).toFixed(2)}</p>
-                            )
-                        })
-                    }
-                </div>
-            </div>
+            <span className={styles.closeList} onClick={()=>setClose(false)}><AiOutlineCloseCircle size={40}/></span>
+            <table className={styles.table}>
+                <tr>
+                    <td className={styles.tdItem}>Item</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Total</td>
+                </tr>
+                {
+                    cardsArry.map((item, index) => {
+                        return (
+                            <tr>
+                                <td>
+                                    <span className={styles.item}>
+                                        <img src={item.image[0]} alt='cart img' />
+                                        <h2>{item.title}</h2>
+                                    </span>
+                                </td>
+                                <td>
+                                    <p>${item.price}</p>
+                                </td>
+                                <td>
+                                    <span className={styles.adjustSpan}>
+                                        <button className={styles.adjustButton} onClick={() => { handleQuantity('-', index) }}>-</button>
+                                        <button className={styles.qButton}>{quantity[index]}</button>
+                                        <button className={styles.adjustButton} onClick={() => { handleQuantity('+', index) }}>+</button>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span className={styles.priceSpan}>
+                                        <p>${(item.price * quantity[index]).toFixed(2)}</p>
+                                        <AiOutlineCloseCircle className={styles.deleteIcon} onClick={() => deleteItem(index)} />
+                                    </span>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
+            </table>
             <div className={styles.total}>
                 <p>Total Price: ${totalPrice().toFixed(2)}</p>
                 <button className={styles.checkOut}>Check Out</button>

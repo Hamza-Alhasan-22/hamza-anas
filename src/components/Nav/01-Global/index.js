@@ -7,14 +7,13 @@ import {navBar} from './data.js'
 import ShopOptions from './shop.js'
 import {NavBar} from '../../../pages/homePage.js'
 import FavCard from '../../Shared/FavCard';
+import BagCard from '../../Shared/BagCard';
 
 function Global() {
-    const {cards, closeState, Bags, Favs} = useContext(NavBar);
-    const [numOfBags, setNumOfBags] = Bags;
-    const [numOfFavs, setNumOfFavs] = Favs;
+    const {cards, closeState, favList} = useContext(NavBar);
     const [cardsArry, setCardsArry] = cards;
+    const [favArryProducts, setFavArryProducts] = favList;
     const [close, setClose] = closeState;
-
     const [showOptions, setShowOptions] = useState(navBar.map(i=>false));
     const handleShowOptions = (index)=>{
       setShowOptions(showOptions.map((item,i)=>(i==index ? !item : false)))  
@@ -37,17 +36,23 @@ function Global() {
             </div>
         )
     }
+    const numOfFavs = () =>{
+        return favArryProducts.length;
+    }
+    const numOfBags = () =>{
+        let num = 0;
+        cardsArry.map((item,index)=>num=num+item.quantity);
+        return num;
+    }
     const [favIsClicked, setFavIsClicked] = useState(false);
     const [BagIsClicked, setBagIsClicked] = useState(false);
     const iconContainer = <div className={styles.iconContainer}>
         <p className={styles.titleButtonTxt}>Login</p>
         <button><BsSearch size={20} /></button>
-        <button onClick={()=>{setFavIsClicked(!favIsClicked);setClose(true)}}><MdFavoriteBorder size={20} />{numOfFavs?<p className={styles.numFavs}>{numOfFavs}</p>:<></>}</button>
-        <button onClick={()=>{setBagIsClicked(!BagIsClicked);setClose(true)}}><BsFillBagFill size={20} />{numOfBags?<p className={styles.numBags}>{numOfBags}</p>:<></>}</button>
+        <button onClick={()=>{setFavIsClicked(!favIsClicked);setClose(true);setBagIsClicked(false)}}><MdFavoriteBorder size={20} />{numOfFavs()!=0?<p className={styles.numFavs}>{numOfFavs()}</p>:<></>}</button>
+        <button onClick={()=>{setBagIsClicked(!BagIsClicked);setClose(true);setFavIsClicked(false)}}><BsFillBagFill size={20} />{numOfBags()!=0?<p className={styles.numBags}>{numOfBags()}</p>:<></>}</button>
     </div>;
-    const bagDiv = <div>
 
-    </div>;
 
     const [clicked, setClicked] = useState(false);
     const handleClicked = () => {
@@ -67,8 +72,8 @@ function Global() {
                 }
             </div>
             {iconContainer}
-            {favIsClicked && close ?<FavCard/>:<></>}
-            {BagIsClicked && close ?bagDiv:<></>}
+            {favIsClicked && close ? <BagCard/>:<></>}
+            {BagIsClicked && close ? <FavCard/>:<></>}
             {/* <div className={styles.navbarMobile}>
                 {
                     clicked ? <FaTimes size={30} onClick={() => handleClicked()} /> : <FaBars size={30} onClick={() => handleClicked()} />

@@ -7,15 +7,13 @@ import {NavBar} from '../../../pages/homePage.js'
 import Alert from '@mui/material/Alert';
 
 function PopOut(props) {
-    const {cards, closeState, Bags, Favs} = useContext(NavBar);
-    const [numOfBags, setNumOfBags] = Bags;
-    const [numOfFavs, setNumOfFavs] = Favs;
+    const {cards, closeState, favList} = useContext(NavBar);
     const [cardsArry, setCardsArry] = cards;
     const [close, setClose] = closeState;
+    const [favArryProducts, setFavArryProducts] = favList;
     const [alertBags, setAlertBags] = useState(false);
     const [alertFavs, setAlertFavs] = useState(false);
     const handleNumOfBags = ()=>{
-        setNumOfBags(numOfBags+quantity);
         setAlertBags(true);
         setTimeout(() => {
             setAlertBags(false);
@@ -27,18 +25,26 @@ function PopOut(props) {
             title: props.title,
             price: props.data.price,
             image: props.sideImgs,
+            quantity: quantity,
         });
         setCardsArry(ary);
         setClose(false);
     }
     const handleNumOfFavs = ()=>{
-        setNumOfFavs(numOfFavs+1);
         setAlertFavs(true);
         setTimeout(() => {
             setAlertFavs(false)
         }, 3000);
         setC(quantity);
         setClose(false);
+        let ary3 = [...favArryProducts];
+        ary3.push({
+            id: props.id,
+            title: props.title,
+            price: props.data.price,
+            image: props.sideImgs,
+        });
+        setFavArryProducts(ary3);
     }
 
     const [ quantity, setQuantity ] = useState(1);
@@ -150,7 +156,7 @@ function PopOut(props) {
             </div>
             <button className='view-button'>View full product details</button>
             <div className='alert-div'>
-            {alertFavs?<Alert severity="success" variant="outlined" className='alert-pop-up'>Added {getQuantity()} items to 'WishList' Successfully !</Alert>:<></>}
+            {alertFavs?<Alert severity="success" variant="outlined" className='alert-pop-up'>Added 1 item to 'WishList' Successfully !</Alert>:<></>}
             {alertBags?<Alert severity="success" variant="outlined" className='alert-pop-up'>Added {getQuantity()} items to 'Card List' Successfully !</Alert>:<></>}
             </div>
         </div>
