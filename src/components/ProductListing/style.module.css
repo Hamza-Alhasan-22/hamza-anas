@@ -1,5 +1,40 @@
-.loading:hover {
-    opacity: 0.8;
+/* ////////up is anas/////////// */
+.headerNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sizes {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons button{
+    height: 40px;
+    width: 20%;
+}
+
+.notActiveButtonStyle{
+    border: 1px solid rgba(243,243,243, 1);
+    opacity: 1;
+    background-color: rgba(255,255,255, 1);
+}
+
+.activeButtonStyle{
+    border: 1px solid rgba(222, 222, 222, 1);
+    background-color: rgba(243, 243, 243, 1);
+}
+
+.buttons button:hover {
+    border: 1px solid rgba(222, 222, 222, 1);
+    background-color: rgba(243, 243, 243, 1);
     cursor: pointer;
 }
 
@@ -15,88 +50,6 @@
     text-transform: uppercase;
 }
 
-.labellStyle {
-    opacity: 1;
-    color: rgba(51, 51, 58, 1);
-    font-family: "ProximaNova-Regular";
-    font-size: 12px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-.foursizes {
-    display: flex;
-    flex-direction: row;
-}
-
-.thesizes {
-    border: 1px solid rgba(243, 243, 243, 1);
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 1);
-    width: 50px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-}
-
-.guides {
-    opacity: 1;
-    color: rgba(51, 51, 58, 1);
-    font-family: "ProximaNova-Semibold";
-    font-size: 12px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-align: left;
-    line-height: 40px;
-    text-transform: uppercase;
-}
-
-.sizes {
-    opacity: 1;
-    color: rgba(51, 51, 58, 1);
-    font-family: "ProximaNova-Regular";
-    font-size: 12px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-align: left;
-    text-transform: uppercase;
-}
-.thesizes1{
-    border: 1px solid rgba(243, 243, 243, 1);
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 1);
-    width: 50px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: wheat;
-}
-.thetopwidth{
-    border-top-width: 1px;
-    border-top-style: solid;
-}
-.Arrow {}
-
-.titleLabel {
-    opacity: 1;
-    color: rgba(51, 51, 51, 1);
-    font-family: "VLNewParisHeadline";
-    font-size: 24px !important;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 0px;
-    text-align: left;
-}
-
 .reset {
     opacity: 1;
     color: rgba(255, 96, 8, 1);
@@ -110,15 +63,12 @@
     text-transform: uppercase;
 }
 
-.labellDiv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-
+.reset:hover,.loading:hover{
+    cursor: pointer;
+    opacity: 0.8;
 }
 
+/* ...... */
 .container {
     display: flex;
     margin-top: 40px;
@@ -127,6 +77,8 @@
 .left {
     width: 18vw;
     margin-right: 2.083vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .right {
@@ -159,6 +111,8 @@
     border: none;
     background-color: white;
     margin-top: 39px;
+    width: 20%;
+    align-self: center;
 }
 
 @media only screen and (max-width: 700px) {
@@ -218,6 +172,10 @@
 .sortSpan {
     display: flex;
     align-items: center;
+}
+
+.sortSpan select:hover{
+    cursor: pointer;
 }
 
 .sortSection p {

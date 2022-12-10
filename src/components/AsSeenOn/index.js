@@ -1,13 +1,14 @@
 import React from 'react';
+import styles from './style.module.css'
 import SectionTitle from '../Shared/SectionTitle';
-import './style.css'
-import './bitmap.png'
+import photo from '../../images/bitmap.png'
+
 function AsSeenOn(props) {
     return (
-        <div className='AsSeenOn-Container'>
+        <div className={styles.AsSeenOnContainer}>
             <SectionTitle title='As Seen On' />
-            <div className='bitmap-img'>
-                <img className='' src={require('./bitmap.png')} alt={'bitmap'} />
+            <div className={styles.bitmapImg}>
+                <img src={photo} alt='bitmap photo' />
             </div>
         </div>
     );

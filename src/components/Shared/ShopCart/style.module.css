@@ -4,11 +4,15 @@
     padding-right: 2%;
 }
 
-.cart-img {
+.cart img:hover{
+    opacity: 0.7;
+}
+
+.cartImg {
     width: 100%;
 }
 
-.cart-button {
+.cartButton {
     position: absolute;
     background-color: rgba(51, 51, 58, 1);
     border: none;
@@ -29,7 +33,12 @@
     width: 65%;
 }
 
-.cart-p {
+.cartButton:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.cartP {
     position: absolute;
     width: 100%;
     background-color: white;
@@ -54,12 +63,12 @@
         height: auto;
     }
 
-    .cart-img {
+    .cartImg {
         max-width: 100%;
         height: auto;
     }
 
-    .cart-button{
+    .cartButton{
         margin-left: 9vw;
         margin-right: 2vw;
     }

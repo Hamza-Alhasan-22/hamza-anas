@@ -1,17 +1,15 @@
-import React from 'react';
-import './style.css'
-import './1.png'
-import './2.png'
-import './3.png'
-import './4.png'
+import React, { useState } from 'react';
+import styles from './style.module.css'
 
 function ShopCart(props) {
+    const [isHover, setIsHover] = useState(false);
     const {id, image, description} = props;
     return (
-        <div className='cart'>
-            <img className='cart-img' src={require('./'+image)} alt={'image '+id}/>
-            <button className='cart-button'>Shop Now</button>
-            <p className='cart-p'>{description}</p>
+        <div className={styles.cart} onMouseEnter={(e) => { setIsHover(true) }}
+        onMouseLeave={(e) => { setIsHover(false) }}>
+            <img className={styles.cartImg} src={image} alt={'image '+id}/>
+            {isHover?<button className={styles.cartButton}>Shop Now</button>:<></>}
+            <p className={styles.cartP}>{description}</p>
         </div>
     );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import './style.css'
+import styles from './style.module.css'
 
 function News(props) {
     return (
-        <div className='news'>
-            <p className='news-date'>{props.date}</p>
+        <div className={styles.news}>
+            <p className={styles.newsDate}>{props.date}</p>
             <h2>{props.title}</h2>
             {props.children}
         </div>

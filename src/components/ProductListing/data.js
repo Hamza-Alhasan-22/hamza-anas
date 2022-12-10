@@ -11,130 +11,64 @@ import img10 from '../../images/d0c128476e213f6a00712195b3c50afce11743eb.png'
 import img11 from '../../images/e7f01adacb21c7ff8202323857b9f33998d4d934.png'
 import img12 from '../../images/ca429081169db5164e3ba000450d2d87d05b95d6.png'
 
-export const items = [
+export const navTitles = [
   {
-    name: 'apparels',
-    label: 'Apparels',
-    items: [
+    title: 'Apparels',
+    options: [
       {
-        name: 'pants', label: 'PANTS',
+        label: 'PANTS', types: ['Sideswept Dhoti','Lounge longhi','Side longhi','modern mope','easy dhoti','classic wideleg']
       },
       {
-        name: 'jumpsuits', label: 'JUMPSUTIS',
+        label: 'JUMPSUTIS', types: ['Sideswept Dhoti','Lounge longhi','Side longhi','modern mope','easy dhoti','classic wideleg']
       },
       {
-        name: 'shorts', label: 'SHORTS',
+        label: 'SHORTS', types: ['Sideswept Dhoti','Lounge longhi','Side longhi','modern mope','easy dhoti','classic wideleg']
       },
       {
-        name: 'tops', label: 'TOPS',
+        label: 'TOPS', types: ['Sideswept Dhoti','Lounge longhi','Side longhi','modern mope','easy dhoti','classic wideleg']
       },
     ],
   },
   {
-    name: 'accessories',
-    label: 'Accessories',
-    items: [
-      {
-        name: 'pants', label: 'Pants',
-      },
-      {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      },
+    title: 'Accessories',
+    options: [
 
-    ]
-    /*items: [
-      { name: 'profile', label: 'Profile' },
-      { name: 'insurance', label: 'Insurance' },
-      {
-        name: 'notifications',
-        label: 'Notifications',
-        items: [
-          { name: 'email', label: 'Email' },
-          {
-            name: 'desktop',
-            label: 'Desktop',
-            items: [
-              { name: 'schedule', label: 'Schedule' },
-              { name: 'frequency', label: 'Frequency' },
-            ],
-          },
-          { name: 'sms', label: 'SMS' },
-        ],
-      },
-    ],*/
+    ],
   },
   {
-    name: 'houseware',
-    label: 'Houseware',
-    items: [
-      {
-        name: 'pants', label: 'Pants',
-      },
-      {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      },
+    title: 'Houseware',
+    options: [
 
     ]
   },
   {
-    name: 'others',
-    label: 'Others',
-    items: [
-      {
-        name: 'pants', label: 'Pants',
-      },
-      {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      },
+    title: 'Others',
+    options: [
 
     ]
   },
   {
-    name: 'techniques',
-    label: 'Techniques',
-    items: [
-      {
-        name: 'pants', label: 'Pants',
-      },
-      {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      }, {
-        name: 'pants', label: 'Pants',
-      },
+    title: 'Techniques',
+    options: [
 
     ]
   },
   {
-    name: 'styles',
-    label: 'Styles',
-    items: [
+    title: 'Styles',
+    options: [
       {
-        name: 'bold', label: 'BOLD',
+        label: 'BOLD', types: ['type1','type2','type3']
       },
       {
-        name: 'monochrome', label: 'MONOCHROME',
-      }, {
-        name: 'neutrals', label: 'NEUTRALS',
+        label: 'MONOCHROME', types: ['type1','type2','type3']
+      }, 
+      {
+        label: 'NEUTRALS', types: ['type1','type2','type3']
       },
-
     ]
   },
-]
-export const options = [
+];
+export const optionsSort = [
   {
     label: "Name",
     value: "1",

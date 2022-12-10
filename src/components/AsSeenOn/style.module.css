@@ -1,0 +1,17 @@
+.AsSeenOnContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.bitmapImg {
+    margin-left: 7.7%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.bitmapImg img {
+    flex: 0 0 auto;
+    max-width: 964px;
+    height: auto;
+
+}

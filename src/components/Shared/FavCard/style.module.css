@@ -1,0 +1,66 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    background-color: white;
+    position: absolute;
+    z-index: 20;
+    right: 5vw;
+    top: 80px;
+    box-shadow: 1px 1px 10px 4px #888888;
+}
+.columns{
+    display: flex;
+    justify-content: space-around;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.adjustSpan{
+    width: 22.33%;
+    display: flex;
+}
+.adjustSpan button {
+    width: 33.3%;
+    border: 1px solid rgba(222, 222, 222, 1);
+}
+.adjustButton{
+    opacity: 1;
+    background-color: rgba(243, 243, 243, 1);
+    color: rgba(51, 51, 58, 1);
+}
+.adjustButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.qButton{
+    border: 1px solid rgba(222, 222, 222, 1);
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+}
+.item{
+    display: flex;
+}
+.item img{
+    height: 50px;
+    width: 50px;
+}
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mainTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkOut{
+    background-color: rgba(51, 51, 58, 1);
+    color: white;
+    width: 13vw;
+    margin-bottom: 20px;
+}
+

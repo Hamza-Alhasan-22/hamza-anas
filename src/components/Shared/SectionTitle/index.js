@@ -1,8 +1,8 @@
 import React from 'react';
-import './style.css'
+import styles from './style.module.css'
 function SectionTitle({ title = '' }) {
     return (
-        <h1 className='section-title'>{title}</h1>
+        <h1 className={styles.sectionTitle}>{title}</h1>
     );
 }
 

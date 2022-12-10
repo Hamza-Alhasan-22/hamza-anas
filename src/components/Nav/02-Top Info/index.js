@@ -3,9 +3,6 @@ import styles from "./styles.module.css";
 
 function TopInfo() {
     const [isActive, setActive] = useState(true);
-    const handleIsActive = () => {
-        setActive(false);
-    };
     return (
         <>
             {isActive ?

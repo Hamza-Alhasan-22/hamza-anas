@@ -1,15 +1,5 @@
-.slider{
-    /* background-color: aqua; */
-    /* padding-top: 7%; */
-    /* background:no-repeat ; */
-    /* padding-top: 126px;
-    background-image: url("./slider1.png");
-    background-size: 100%;
-    background-size: cover; */
-}
 .SlidesContainer{
     color: white;
-    /* max-width: 1440px; */
     position: relative;
     
 
@@ -17,8 +7,6 @@
     justify-content: end;
     align-content: center;
     height: 66vh;
-    /* z-index: 2; */
-    
 }
 .MyButton{
     color: white;
@@ -37,7 +25,7 @@
 }
 .MyButton:hover{
     cursor: pointer;
-    /* background-color: rgb(1, 1, 1); */
+    color: black;
 }
 .content{
     display: flex;
@@ -64,7 +52,7 @@
     width: 50px;
     position: absolute;
     z-index: 5;
-    top: 40%;
+    top: 25%;
     left: 0%;
     border-radius: 0px 50px 50px 0px ;
     background-color: black;
@@ -84,7 +72,7 @@
     width: 50px;
     position: absolute;
     z-index: 5;
-    top: 40%;
+    top: 25%;
     border-radius: 50px 0 0 50px ;
     background-color: black;
     opacity: 0.4;
@@ -103,19 +91,6 @@
 }
 .left {
     transform: rotate(135deg);
-}
-
-@media only screen and (max-width: 470px) {
-    .content{
-        
-        /* width: 100%; */
-        /* padding-right: 0;
-        text-align: center;
-        align-items: center; */
-    }
-    .MySpan{
-        /* text-align: center; */
-    }
 }
 
 @media only screen and (max-width: 700px) {

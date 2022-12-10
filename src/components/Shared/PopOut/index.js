@@ -1,51 +1,63 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './style.css'
 import { FaTimes } from 'react-icons/fa';
 import { BsQuestionSquare } from 'react-icons/bs'
 import Stars from '../Stars';
+import {NavBar} from '../../../pages/homePage.js'
+import Alert from '@mui/material/Alert';
 
 function PopOut(props) {
-    // const popOuts = [
-    //     {
-    //         id: 1,
-    //         title: '',
-    //         sideImgs: [],
-    //         data: {
-    //             title: '',
-    //             price: 0,
-    //             stars: 4.8,
-    //             description: '',
-    //             employment: '',
-    //             partnership: '',
-    //             collab: ''
-    //         }
-    //     }
-    // ];
-    //sideImgs [array], mainImg(real img as component -not just path-)
+    const {cards, closeState, Bags, Favs} = useContext(NavBar);
+    const [numOfBags, setNumOfBags] = Bags;
+    const [numOfFavs, setNumOfFavs] = Favs;
+    const [cardsArry, setCardsArry] = cards;
+    const [close, setClose] = closeState;
+    const [alertBags, setAlertBags] = useState(false);
+    const [alertFavs, setAlertFavs] = useState(false);
+    const handleNumOfBags = ()=>{
+        setNumOfBags(numOfBags+quantity);
+        setAlertBags(true);
+        setTimeout(() => {
+            setAlertBags(false);
+        }, 3000);
+        setC(quantity);
+        let ary = [...cardsArry];
+        ary.push({
+            id: props.id,
+            title: props.title,
+            price: props.data.price,
+            image: props.sideImgs,
+        });
+        setCardsArry(ary);
+        setClose(false);
+    }
+    const handleNumOfFavs = ()=>{
+        setNumOfFavs(numOfFavs+1);
+        setAlertFavs(true);
+        setTimeout(() => {
+            setAlertFavs(false)
+        }, 3000);
+        setC(quantity);
+        setClose(false);
+    }
 
     const [ quantity, setQuantity ] = useState(1);
     const handleQuantity = (check) => {
-        //check = '+' or '-'
         check == '+' ? setQuantity(quantity + 1) :
             quantity == 1 && check == '-' ? setQuantity(1) : 
             setQuantity(quantity - 1);
     };
 
-    // const [mainImg, setMainImg] = useState(props.sideImgs[0])
-    // const handleMainImg = (image) =>{
-    //     setMainImg(image);
-    // };
-    
+    const [c,setC] = useState(quantity);
+    const getQuantity = () =>{
+        return c
+    }
+
+    const [mainImage, setMainImage] = useState(props.sideImgs[0]);
+    const handleMainImage = (index) => {
+        setMainImage(props.sideImgs[index]);
+    };
     const sizeButton = [1, 2, 3, 4];
-
-    // const {sizeClicked, setSizeClicked} = useState([true,false,false,false]);
-    // const handleSizeClicked = (index) => {
-    //     let arry = sizeClicked.map((item,i)=>{
-    //         i==index? item=true: item=false;
-    //     })
-    //     setSizeClicked(arry);
-    // }
-
     const sizeGuidelines = [
         'Model is a US Size 2-4, wears Matter Size 1. 175 cm tall.',
         'Model is a US Size 4-6, wears Matter Size 2. 175 cm tall.',
@@ -56,14 +68,10 @@ function PopOut(props) {
     const handleSizeDiscription = (index) =>{
         setSizeDiscription(sizeGuidelines[index]);
     }
-
-
     const [clicked, setClicked] = useState(true);
     const handleClicked = () => {
         setClicked(!clicked);
     };
-
-
     return (
         
             clicked ?
@@ -76,14 +84,14 @@ function PopOut(props) {
             <div className='pop-out-data'>
                 <div className='pop-out-left'>
                     {
-                        props.sideImgs.map(item => {
-                            return (item)
+                        props.sideImgs.map((item,i) => {
+                            return(<img src={item} alt={'pop up img '+i} onClick={()=>handleMainImage(i)}/>)
                         })
                     //onClick={()=>handleMainImg(item)}
                     }
                 </div>
                 <div className='pop-out-img'>
-                    {props.mainImg}
+                    <img src={mainImage} alt={'pop up mainImg'}/>
                 </div>
                 <div className='pop-out-right'>
                     <div className='right-title'>
@@ -131,16 +139,20 @@ function PopOut(props) {
                                 <button className='q-button'>{quantity}</button>
                                 <button className='adjust-button' onClick={()=>{handleQuantity('+')}}>+</button>
                             </span>
-                            <button className='add-to-cart'>Add to cart</button>
+                            <button className='add-to-cart' onClick={()=>handleNumOfBags()}>Add to cart</button>
                             <span className='wishlist-span'>
                                 <BsQuestionSquare />
-                                <button className='add-to-wishlist'>Add to wishlist</button>
+                                <button className='add-to-wishlist' onClick={()=>handleNumOfFavs()}>Add to wishlist</button>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
             <button className='view-button'>View full product details</button>
+            <div className='alert-div'>
+            {alertFavs?<Alert severity="success" variant="outlined" className='alert-pop-up'>Added {getQuantity()} items to 'WishList' Successfully !</Alert>:<></>}
+            {alertBags?<Alert severity="success" variant="outlined" className='alert-pop-up'>Added {getQuantity()} items to 'Card List' Successfully !</Alert>:<></>}
+            </div>
         </div>
     :<></>
     );

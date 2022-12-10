@@ -4,18 +4,17 @@
     position: relative;
 }
 .card:hover{
-    opacity: 0.8;
-    /* cursor: pointer; */
+    box-shadow: 0px 10px 40px rgba(0,0,0, 0.05);
+    background-color: rgba(255,255,255, 0.5);
 }
-.card-button:hover{
-    opacity: 0.8;
+.card img:hover{
+    opacity: 0.7;
+}
+.cardButton:hover{
     cursor: pointer;
 }
-/* .card-img {
-    position: relative;
-} */
 
-.card-price {
+.cardPrice {
     opacity: 1;
     color: rgba(51, 51, 58, 1);
     font-family: "ProximaNova-Regular";
@@ -28,7 +27,7 @@
     margin: 1%;
 }
 
-.card-description {
+.cardDescription {
     opacity: 1;
     color: rgba(51, 51, 58, 1);
     font-family: "VLNewParisHeadline";
@@ -48,26 +47,27 @@
         height: auto;
     }
 
-    .card-description {
+    .cardDescription {
         text-align: center;
     }
 
-    .card-price {
+    .cardPrice {
         text-align: center;
         padding-bottom: 2%;
     }
 
-    .card-img {
+    .cardImg {
         max-width: 100%;
         height: auto;
     }
 }
 
-.card-button {
+.cardButton {
     position: absolute;
     align-self: center;
     margin-top: 50%;
     width: 50%;
+    height: 50px;
 
     opacity: 1;
     background-color: rgba(51, 51, 58, 1);

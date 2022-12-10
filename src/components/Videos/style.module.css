@@ -1,8 +1,6 @@
-.video-container {
+.videoContainer {
     display: flex;
     flex-direction: column;
-    padding-left: 10.4%;
-    padding-right: 10.4%;
     opacity: 1;background-color: rgba(252,252,252, 1);
 }
 
@@ -11,7 +9,7 @@
     flex-direction: row;
 }
 
-.video-container button {
+.videoContainer button {
     opacity: 1;
     background-color: rgba(51, 51, 58, 1);
     border: none;
@@ -28,13 +26,18 @@
     margin-left: 45%;
 }
 
+.videoContainer button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 @media only screen and (max-width: 700px) {
     .videos {
         flex-wrap: nowrap;
         overflow-x: auto;
     }
 
-    .video-container button {
+    .videoContainer button {
         font-size: 10px;
         width: 30%;
         margin-left: 35%;

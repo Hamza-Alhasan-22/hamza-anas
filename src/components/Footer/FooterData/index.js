@@ -1,9 +1,9 @@
 import React from 'react';
-import './style.css'
+import styles from './style.module.css'
 
 function FooterData(props) {
     return (
-        <div className='footer-data'>
+        <div className={styles.footerData}>
             <h2>{props.title}</h2>
             {
                 props.options.map(item =>{

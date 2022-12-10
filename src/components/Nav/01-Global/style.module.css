@@ -1,17 +1,25 @@
-.nav-bar-div {
-    /* position: fixed;
-    z-index: 9; */
+.favDiv{
+    height: 100px;
+    width: 200px;
+    background-color: white;
+    position: absolute;
+    z-index: 20;
+    right: 11vw;
+    top: 80px;
+    box-shadow: 1px 1px 10px 4px #888888;
+}
+
+.navBarDiv{
     display: flex;
-    padding-left: 10.4%;
-    padding-right: 10.4%;
+    height: 80px;
     background: white;
+    padding: 0 10.4vw 0 10.4vw;
     justify-content: space-between;
-    height: 10vh;
+    position: relative;
 }
 
 #matter {
     opacity: 1;
-    /* color: rgba(82, 82, 82, 1); */
     color: rgb(3, 3, 3);
     font-family: "MarkPro";
     font-size: 36px;
@@ -25,27 +33,31 @@
     align-items: center;
 }
 
-.title-container {
+.iconContainer{
+    display: flex;
+    align-items: center;
+    margin-right: 7%;
+    /* position: relative; */
+    /* width: 22vw; */
+}
+
+.iconContainer button{
+    border: none;
+    background-color: white;
+    margin-left: 15%;
     display: flex;
     align-items: center;
 }
 
-.icon-container {
-    display: flex;
-    align-items: center;
+.iconContainer button:hover{
+    cursor: pointer;
 }
 
-.icon-container>* {
-    display: block;
-    margin: 0;
-    margin-left: 2vw;
+.redActive{
+    color: rgba(255, 94, 27, 1) !important
 }
 
-/* .arrow-down{
-    
-} */
-
-.title-button-txt {
+.titleButtonTxt {
     opacity: 1;
     color: rgba(51, 51, 58, 1);
     font-family: "ProximaNova-Semibold";
@@ -57,101 +69,105 @@
     line-height: 40px;
     text-transform: uppercase;
 
+    display: flex;
+    align-items: center;
     border: none;
     background-color: white;
     padding-right: 10%;
 }
 
-.login {
-    padding-right: 0;
-}
-
-/* .title-button:hover,
-.title-button:active {
-    text-decoration: underline;
-} */
-
-.title-container button:hover,
-.title-container button:active {
-    text-decoration: underline;
-}
-
-.icon-container p:hover,
-.icon-container p:active {
-    text-decoration: underline;
-}
-
-.navbar-mobile,
-.container-mobile {
-    display: none;
-}
-
-.titles-mobile {
+.titleContainer {
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
-.title-button{
+.titleButton{
     display: flex;
     flex-direction: column;
     padding-right: 10%;
 }
 
+.titleButtonTxt:hover{
+    cursor: pointer;
+}
+
+.numBags,.numFavs{
+    position: absolute;
+    background-color: rgba(255, 94, 27, 1);
+    color: white;
+    margin-top: -23px;
+    margin-left: 1vw!important;
+    /* right: 10.4vw; */
+    width: 20px;
+    border-radius:50%;
+}
+
+.numFavs{
+    background-color: red !important;
+}
+
+@media only screen and (min-width: 1000px) {
+
+}
+/* 
+
+
+.navbarMobile,
+.containerMobile {
+    display: none;
+}
+
+.titlesMobile {
+    display: flex;
+    flex-direction: column;
+}
+
 @media only screen and (min-width: 880px) {
-    .titles-options {
+    .titlesOptions {
         display: flex;
         flex-direction: column;
-        /* position: absolute; */
-    }
-    .nav-bar-div{
-        /* position: relative; */
-    }
-    .isActive{
-        margin-top: 10rem;
     }
 }
 
 
 @media only screen and (max-width: 880px) {
-    .title-button{
+    .titleButton{
         padding-right: 0;
     }
-    .title-container .title-button-txt {
+    .titleContainer .titleButtonTxt {
         display: none;
     }
 
-    .container-mobile .title-button-txt {
+    .containerMobile .titleButtonTxt {
         padding-right: 0;
         margin-top: 4%;
         text-decoration: underline;
     }
 
-    .icon-container {
+    .iconContainer {
         display: none;
     }
 
-    .navbar-mobile .icon-container {
+    .navbarMobile .iconContainer {
         display: flex;
         justify-content: space-evenly;
         margin-bottom: 5%;
-        /* margin-left: -5.5%;
-        margin-right: 15%; */
     }
 
-    .navbar-mobile .icon-container p {
+    .navbarMobile .iconContainer p {
         width: 35%;
         text-align: center;
         font-size: 0.9rem;
     }
 
-    .navbar-mobile {
+    .navbarMobile {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .container-mobile {
+    .containerMobile {
         display: flex;
         flex-direction: column;
         background-color: rgb(252, 252, 252);
@@ -162,4 +178,4 @@
         width: 49vw;
         z-index: 9;
     }
-}
+} */

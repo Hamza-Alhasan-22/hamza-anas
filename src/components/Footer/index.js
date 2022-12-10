@@ -1,6 +1,6 @@
 import React from 'react';
+import styles from './style.module.css'
 import FooterData from './FooterData';
-import './style.css'
 import { IconContext } from "react-icons";
 import { RiFacebookCircleFill } from 'react-icons/ri';
 import { AiFillTwitterCircle } from 'react-icons/ai';
@@ -27,9 +27,9 @@ function Footer(props) {
         }
     ];
     return (
-        <div className='footer'>
-            <div className='footer-up'>
-                <div className='footer-data-container'>
+        <div className={styles.footer}>
+            <div className={styles.footerUp}>
+                <div className={styles.footerDataContainer}>
                     {
                         footerdata.map(item => {
                             return (
@@ -38,17 +38,17 @@ function Footer(props) {
                         })
                     }
                 </div>
-                <div className='subscribe'>
+                <div className={styles.subscribe}>
                     <h2>Subscribe to newsletter</h2>
-                    <div className='subscribe-content'>
+                    <div className={styles.subscribeContent}>
                         <input></input>
                         <button>Subscribe</button>
                     </div>
-                    <div className='subscribe-logo'>
+                    <div className={styles.subscribeLogo}>
                         <IconContext.Provider 
                         value={{ color: 'rgba(178, 178, 178, 1)', size: '24' }}
                         >
-                            <div className='subscribe-logo-value'>
+                            <div className={styles.subscribeLogoValue}>
                             <RiFacebookCircleFill />
                             </div>
                             <div>
@@ -59,7 +59,7 @@ function Footer(props) {
                     </div>
                 </div>
             </div>
-            <div className='footer-down'>
+            <div className={styles.footerDown}>
                 <p>© Copyright Matter PTE LTD  2017</p>
             </div>
         </div>
