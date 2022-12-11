@@ -1,6 +1,6 @@
 import React, {useState, useContext} from 'react';
 import styles from './style.module.css'
-import { NavBar } from '../../../pages/homePage.js'
+import { NavBar } from '../../../App.js'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import {BsTrash} from 'react-icons/bs'
 

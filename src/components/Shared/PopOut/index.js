@@ -3,7 +3,7 @@ import './style.css'
 import { FaTimes } from 'react-icons/fa';
 import { BsQuestionSquare } from 'react-icons/bs'
 import Stars from '../Stars';
-import {NavBar} from '../../../pages/homePage.js'
+import { NavBar } from '../../../App.js'
 import Alert from '@mui/material/Alert';
 
 function PopOut(props) {

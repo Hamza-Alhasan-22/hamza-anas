@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
-import { NavBar } from '../../../pages/homePage.js'
+import { NavBar } from '../../../App.js'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 function FavCard(props) {

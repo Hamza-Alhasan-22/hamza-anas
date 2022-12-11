@@ -5,7 +5,7 @@ import { MdFavoriteBorder } from 'react-icons/md';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {navBar} from './data.js'
 import ShopOptions from './shop.js'
-import {NavBar} from '../../../pages/homePage.js'
+import {NavBar} from '../../../App.js'
 import FavCard from '../../Shared/FavCard';
 import BagCard from '../../Shared/BagCard';
 

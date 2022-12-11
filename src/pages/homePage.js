@@ -12,33 +12,16 @@ const Shop =React.lazy(()=>import('../components/Shop'));
 const Slider = React.lazy(()=>import('../components/Slider'));
 const Videos =React.lazy(()=>import('../components/Videos'));
 
-export const NavBar = createContext(null);
-
 function HomePage(props) {
-    const [cardsArry, setCardsArry] = useState([]);
-    const [favArryProducts, setFavArryProducts] = useState([]);
-    const [close, setClose] = useState(false);
     return (
         <>
             <div className={styles.headerContainer}>
                 <TopInfo />
-                <NavBar.Provider value={{
-                    cards: [cardsArry, setCardsArry],
-                    closeState: [close, setClose],
-                    favList: [favArryProducts, setFavArryProducts]
-                    }}>
-                    <Global />
-                </NavBar.Provider>
+                <Global />
             </div>
             <Slider />
             <div className={styles.mainContainer}>
-                <NavBar.Provider value={{
-                    cards: [cardsArry, setCardsArry],
-                    closeState: [close, setClose],
-                    favList: [favArryProducts, setFavArryProducts]
-                    }}>
-                    <NewArrivals />
-                </NavBar.Provider>
+                <NewArrivals/>
                 <About />
                 <Explore />
                 <Shop />
