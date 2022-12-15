@@ -90,3 +90,20 @@
     font-family: "ProximaNova-Regular";
     cursor: pointer;
 }
+
+@media only screen and (max-width: 1000px) {
+    .container{
+        position: static;
+        flex-direction: column;
+        overflow: scroll;
+        max-height: 40vh;
+        left: auto;
+        margin-top: 0;
+        width: 100%;
+        box-shadow: none;
+        border-bottom: 1px solid gray;
+    }
+    .column {
+        margin-top: 0;
+    }
+}

@@ -106,76 +106,60 @@
     background-color: red !important;
 }
 
-@media only screen and (min-width: 1000px) {
-
-}
-/* 
-
-
-.navbarMobile,
-.containerMobile {
+.navbarMobile{
     display: none;
 }
 
-.titlesMobile {
+.faTimesIcon{
     display: flex;
-    flex-direction: column;
+    position: absolute;
+    right: 3vw;
+    top: 25px;
 }
 
-@media only screen and (min-width: 880px) {
-    .titlesOptions {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-
-@media only screen and (max-width: 880px) {
-    .titleButton{
-        padding-right: 0;
-    }
-    .titleContainer .titleButtonTxt {
+@media only screen and (max-width: 1000px) {
+    .titleContainer{
         display: none;
     }
-
-    .containerMobile .titleButtonTxt {
-        padding-right: 0;
-        margin-top: 4%;
-        text-decoration: underline;
-    }
-
-    .iconContainer {
-        display: none;
-    }
-
-    .navbarMobile .iconContainer {
+    .navbarMobile{
         display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 5%;
     }
-
-    .navbarMobile .iconContainer p {
-        width: 35%;
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    .navbarMobile {
+    .iconContainer{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .containerMobile {
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(252, 252, 252);
-        margin-top: 94vh;
-        margin-right: 20vw;
+        margin: 0;
+        padding: 0;
+        top: 9px;
         position: absolute;
-        height: 84vh;
-        width: 49vw;
-        z-index: 9;
+        right: 25vw;
+        width: 13vw;
     }
-} */
+    .containerMobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60vw;
+        height: 77vh;
+        background-color: white;
+        z-index: 10;
+        position: absolute;
+        right: 0vw;
+        top: 80px;
+    }
+    .titleButtonTxt{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .iconContainer{
+        right: 40vw;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .iconContainer{
+        right: 57vw;
+        width: 1vw;
+    }
+}

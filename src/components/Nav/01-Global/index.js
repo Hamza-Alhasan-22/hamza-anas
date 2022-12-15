@@ -71,25 +71,21 @@ function Global() {
                     })
                 }
             </div>
+            <div className={styles.navbarMobile}>
+                <h2 id={styles.matter}>matter</h2>
+                <span className={styles.faTimesIcon} onClick={() => handleClicked()}>{clicked ? <FaTimes size={30} /> : <FaBars size={30} />}</span>
+                {clicked ?
+                <div className={styles.containerMobile}>
+                    {
+                        navBar.map((item) => {
+                            return (headerTitle(item))
+                        })
+                    }
+                </div> : <></>}
+            </div>
             {iconContainer}
             {favIsClicked && close ? <BagCard/>:<></>}
             {BagIsClicked && close ? <FavCard/>:<></>}
-            {/* <div className={styles.navbarMobile}>
-                {
-                    clicked ? <FaTimes size={30} onClick={() => handleClicked()} /> : <FaBars size={30} onClick={() => handleClicked()} />
-                }
-                {clicked ?
-                <div className={styles.containerMobile}>
-                    {iconContainer}
-                    <div className={styles.titlesMobile}>
-                    {
-                        navBar.map((item) => {
-                            return (headerTitle(item.title, item.options, item.id))
-                        })
-                    }
-                    </div>
-                </div> : <></>}
-            </div> */}
         </div>
     );
 }

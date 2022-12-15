@@ -6,6 +6,7 @@ import { AiOutlineReload } from 'react-icons/ai';
 //import Sidebar from './dropdown';
 import { products, optionsSort } from "./data"
 import NavBar from './navBar.js';
+import {popUpData} from '../NewArrivals/data.js'
 
 function sortCards(arrayProducts, value) {
   if (value == 1) {
@@ -88,7 +89,7 @@ function ProductListing(props) {
           <div className={styles.gridContainer}>
             {products1.map((item, key) => {
               return (
-                <Card cardData={item} popupData={null} />
+                <Card cardData={item} popupData={popUpData[0]} />
               )
             })}
           </div>

@@ -65,7 +65,7 @@ const globalData = [
         title: 'Shop by collection',
         options: [
         {
-            label: 'Sale/Last Call', types: []
+            label: 'Sale Call', types: []
         },
         {
             label: 'Essentials', types: []
@@ -76,7 +76,7 @@ const globalData = [
         title: 'Shop by techniques',
         options: [
             {
-                label: 'Block Printing', types: []
+                label: 'Printing', types: []
             },
             {
                 label: 'Ikat', types: []
