@@ -3,15 +3,21 @@
     flex-direction: column;
     position: relative;
 }
-.card:hover{
-    box-shadow: 0px 10px 40px rgba(0,0,0, 0.05);
-    background-color: rgba(255,255,255, 0.5);
+
+.card:hover {
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.5);
 }
-.card img:hover{
+
+
+.card img:hover {
     opacity: 0.7;
 }
-.cardButton:hover{
+
+.cardButton:hover {
     cursor: pointer;
+    display: block !important;
+
 }
 
 .cardPrice {
@@ -63,6 +69,7 @@
 }
 
 .cardButton {
+    display: none;
     position: absolute;
     align-self: center;
     margin-top: 50%;
@@ -80,4 +87,9 @@
     text-align: center;
     line-height: 20px;
     text-transform: uppercase;
+}
+
+
+.card:hover .cardButton {
+    display: block;
 }

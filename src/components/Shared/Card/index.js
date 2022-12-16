@@ -4,29 +4,33 @@ import styles from './style.module.css'
 import Popup from 'reactjs-popup';
 import PopOut from '../PopOut';
 
+const Modal = ({ childComponent, onClose, onOpen, isOpen }) => (
+    <Popup
+        modal onClose={onClose} onOpen={onOpen} open={isOpen}>
+        {childComponent}
+    </Popup>
+)
+
+
 function Card(props) {
     const { cardData, popupData } = props;
-    const tag = (check) => {
-        let x;
-        check === 'True' ? x = <NewTag /> : x = <></>
-        console.log(x)
-        return (
-            x
-        )
-    };
-    const [isHover, setIsHover] = useState(0)
-    const Modal = (stuf) => (
-        <Popup
-            trigger={isHover ? <button className={styles.cardButton}>QUICK VIEW</button> : null} modal>
-            {stuf}
-        </Popup>
-    );
+
+    const [isModalOpen, setisModalOpen] = useState(false);
+
+    const openModal = () => {
+        setisModalOpen(true);
+    }
+
+    const closeModal = () => {
+        setisModalOpen(false);
+    }
+
+
     return (
-        <div className={styles.card} onMouseEnter={(e) => { setIsHover(true) }}
-            onMouseLeave={(e) => { setIsHover(false) }}>
+        <div className={styles.card}>
             <img src={cardData.image} alt={'img card ' + cardData.id} className={styles.cardImg} />
             {
-                cardData.newTag === 'active' ? tag('True') : tag('False')
+                cardData.newTag === 'active' ? <NewTag /> : null
             }
             <p className={styles.cardDescription}>
                 {cardData.description}
@@ -34,7 +38,16 @@ function Card(props) {
             <p className={styles.cardPrice}>
                 {cardData.price}
             </p>
-            {Modal(<PopOut {...popupData} />)}
+            <button
+                className={styles.cardButton}
+                onClick={openModal}
+            >QUICK VIEW</button>
+            <Modal
+                childComponent={<PopOut {...popupData} onClose={closeModal} />}
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                onOpen={openModal}
+            />
         </div>
     );
 }

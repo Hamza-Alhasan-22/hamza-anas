@@ -49,7 +49,7 @@ const NavBar = (props) => {
                                             
                                         </div>
                                     )
-                                }) : console.log(isClicked[i])
+                                }) : null
                             }
                         </div>
                     )

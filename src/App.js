@@ -9,6 +9,7 @@ function App() {
   const [cardsArry, setCardsArry] = useState([]);
   const [favArryProducts, setFavArryProducts] = useState([]);
   const [close, setClose] = useState(false);
+  console.log({cardsArry});
   return (
     <>
       <NavBar.Provider value={{

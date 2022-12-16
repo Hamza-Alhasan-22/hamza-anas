@@ -43,7 +43,6 @@ function Explore(props) {
         let x;
         let len = isShown.length;
         i>=0 ? x=i%len : x=(len-(Math.abs(i)%len))%len ;
-        console.log(x);
         return x
     };
     const [ind,setInd] = useState(0);

@@ -1,7 +1,7 @@
 .alert-pop-up{
     /* position: absolute;
-    right: 3vw;
-    top: 73vh; */
+    bottom: 0;
+    right: 0; */
     transition: all 3s ease 3s;
 }
 
@@ -12,6 +12,14 @@
     /* width: 25vw; */
     right: 3vw;
     top: 73vh;
+}
+
+@media only screen and (max-width: 570px) {
+    .alert-div{
+        left: 0;
+        top: 0;
+        background-color: white;
+    }
 }
 
 .pop-out-container,
